@@ -37,7 +37,7 @@ function SurveyingLanding() {
         <h1>Surveying</h1>
       </Header>
       <SurveyContainer>
-        <SurveyingTitle title="hola"></SurveyingTitle>
+        <SurveyingTitle title="What is the best way to manage the state in React"></SurveyingTitle>
         <Options options={options}></Options>
       </SurveyContainer>
     </LandingContainer>

@@ -1,15 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { Button } from "./buttonSurveying.styled";
 
 function ButtonSurveying(props) {
   return (
-    <div>
+    <Button>
       <img src="#" alt="icon" />
       <p>name</p>
-    </div>
+    </Button>
   );
 }
-
-ButtonSurveying.propTypes = {};
 
 export default ButtonSurveying;

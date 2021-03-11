@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <SurveyingLanding></SurveyingLanding>
       <SurveyingFooter></SurveyingFooter>
-      <ButtonSurveying></ButtonSurveying>
     </div>
   );
 }

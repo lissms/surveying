@@ -5,6 +5,7 @@ export const LandingContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 `;
 export const Header = styled.header`
   width: 100%;
@@ -32,6 +33,7 @@ export const Header = styled.header`
 `;
 
 export const SurveyContainer = styled.div`
+  margin-top: 100px;
   width: 87%;
   height: 280px;
   padding: 15px 20px;

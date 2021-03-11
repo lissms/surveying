@@ -1,14 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { Footer } from "./surveyingFooter.styled";
+import ButtonSurveying from "./ButtonSurveying";
 
 function SurveyingFooter(props) {
   return (
-    <div>
-      <button></button>
-    </div>
+    <Footer>
+      <ButtonSurveying />
+      <ButtonSurveying />
+      <ButtonSurveying />
+    </Footer>
   );
 }
-
-SurveyingFooter.propTypes = {};
 
 export default SurveyingFooter;
