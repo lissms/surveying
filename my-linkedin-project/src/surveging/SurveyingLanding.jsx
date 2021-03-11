@@ -2,6 +2,7 @@ import React from "react";
 import SurveyingTitle from "./SurveyingTitle";
 import { Header, LandingContainer, SurveyContainer } from "./surveyingLanding.styled";
 import Options from "./Options";
+import SurveyingFooter from "./SurveyingFooter";
 
 function SurveyingLanding() {
   const options = [
@@ -40,6 +41,7 @@ function SurveyingLanding() {
         <SurveyingTitle title="What is the best way to manage the state in React"></SurveyingTitle>
         <Options options={options}></Options>
       </SurveyContainer>
+      <SurveyingFooter></SurveyingFooter>
     </LandingContainer>
   );
 }

@@ -3,23 +3,17 @@ import styled from "styled-components";
 export const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 100vh;
 `;
 export const Header = styled.header`
   width: 100%;
-  height: 82px;
+  height: 10vh;
   background: linear-gradient(180deg, #7aae5a 0%, #adc759 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  ::after {
-    content: "L";
-    position: absolute;
-    right: 20px;
-    top: 10px1;
-  }
   & h1 {
     color: #ffffff;
     font-family: Orbitron;
@@ -33,7 +27,6 @@ export const Header = styled.header`
 `;
 
 export const SurveyContainer = styled.div`
-  margin-top: 100px;
   width: 87%;
   height: 280px;
   padding: 15px 20px;

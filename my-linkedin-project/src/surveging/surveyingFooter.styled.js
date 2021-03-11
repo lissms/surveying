@@ -5,8 +5,6 @@ export const Footer = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 78px;
+  height: 10vh;
   background-color: #c1db6c;
-  position: absolute;
-  bottom: 0;
 `;
