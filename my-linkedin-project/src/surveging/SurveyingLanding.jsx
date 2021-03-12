@@ -3,6 +3,7 @@ import SurveyingTitle from "./SurveyingTitle";
 import { Header, LandingContainer, SurveyContainer } from "./surveyingLanding.styled";
 import Options from "./Options";
 import SurveyingFooter from "./SurveyingFooter";
+import MenuContent from "../menu/Menu";
 
 function SurveyingLanding() {
   const options = [
@@ -33,7 +34,8 @@ function SurveyingLanding() {
   ];
 
   return (
-    <LandingContainer>
+    <>
+      {/* <LandingContainer>
       <Header>
         <h1>Surveying</h1>
       </Header>
@@ -42,7 +44,10 @@ function SurveyingLanding() {
         <Options options={options}></Options>
       </SurveyContainer>
       <SurveyingFooter></SurveyingFooter>
-    </LandingContainer>
+    </LandingContainer> */}
+
+      <MenuContent></MenuContent>
+    </>
   );
 }
 
