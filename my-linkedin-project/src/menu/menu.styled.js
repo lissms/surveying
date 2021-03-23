@@ -54,5 +54,5 @@ export const ContentStyleSelector = styled.div`
   justify-content: space-evenly;
   align-items: center;
   padding-bottom: 17px;
-  border-bottom: 1px solid #e4e4e4; ;
+  border-bottom: 1px solid #e4e4e4;
 `;
