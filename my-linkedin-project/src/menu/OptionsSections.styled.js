@@ -14,7 +14,6 @@ export const ButtonOptions = styled.div`
   margin-right: 17px;
   display: flex;
   width: 27px;
-
   border-radius: 100px;
   transform: rotate(180deg);
   justify-content: center;

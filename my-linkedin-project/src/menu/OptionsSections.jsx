@@ -18,7 +18,7 @@ function OptionsSections(props) {
           <div className="arrow-bottom"></div>
         </ButtonOptions>
       </Option>
-      <OptionChooseStyles></OptionChooseStyles>
+      <OptionChooseStyles hasFlag={hasFlag}></OptionChooseStyles>
     </div>
   );
 }
