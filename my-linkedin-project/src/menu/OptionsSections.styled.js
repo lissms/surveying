@@ -4,7 +4,7 @@ export const Option = styled.div`
   width: 243px;
   height: 37px;
   background: #c1db6c;
-  border-radius: 4px;
+  border-radius: ${(props) => `${props.borderRadius}`};
   display: flex;
   justify-content: space-between;
   align-items: center;
