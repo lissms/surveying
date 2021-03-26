@@ -4,11 +4,12 @@ export const Option = styled.div`
   width: 243px;
   height: 37px;
   background: #c1db6c;
-  border-radius: ${(props) => `${props.borderRadius}`};
+  border-radius: ${(props) => (props.hasFlag ? `4px 4px 0 0px;;` : ` 4px `)};
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 17px;
+  margin-bottom: 10px;
 `;
 export const ButtonOptions = styled.div`
   margin-right: 17px;
