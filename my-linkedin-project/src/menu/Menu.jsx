@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Title, MenuContent, InputText } from "./menu.styled";
 import { Header } from "../surveging/surveyingLanding.styled";
 import StyleSelector from "./StyleSelector";
@@ -13,7 +14,14 @@ function Menu(props) {
       </Header>
       <MenuContent>
         <Title>Title</Title>
-        <InputText type="text" name="Title" id="title" placeholder="Whire your survey title" />
+        <InputText
+          type="text"
+          name="Title"
+          id="title"
+          placeholder="Whire your survey title"
+          value={props.titleProp}
+          onChange={(event) => props.changeTitleProp(event.target.value)}
+        />
         <StyleSelector></StyleSelector>
 
         <Title>Background</Title>
@@ -25,4 +33,15 @@ function Menu(props) {
   );
 }
 
-export default Menu;
+const mapStateToProps = (state) => ({
+  titleProp: state.title,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  changeTitleProp: function (newTitle) {
+    const action = { type: "CHANGE_TITLE", payload: newTitle };
+    dispatch(action);
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
