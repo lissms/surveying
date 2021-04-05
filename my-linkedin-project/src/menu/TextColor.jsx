@@ -6,7 +6,14 @@ function TextColor(props) {
   return (
     <ContentMiniComponet>
       <Label>Text color</Label>
-      <Button height="24px" width="44px" borderRd="4px" border="1px solid #313468" background=" #686EDB"></Button>
+      <Button
+        height="24px"
+        width="44px"
+        borderRd="4px"
+        border="1px solid #313468"
+        background=" #686EDB"
+        onClick={() => props.changeTitleProp()}
+      ></Button>
     </ContentMiniComponet>
   );
 }

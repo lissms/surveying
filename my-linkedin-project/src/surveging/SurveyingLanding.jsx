@@ -7,33 +7,6 @@ import Menu from "../menu/Menu";
 import { connect } from "react-redux";
 
 function SurveyingLanding(props) {
-  const options = [
-    {
-      name: "redux",
-      image: "mano",
-      texColor: "red",
-      fontSize: "10px",
-      textAjustement: "center",
-      id: 1,
-    },
-    {
-      name: "Recoil",
-      image: "corazon",
-      texColor: "blue",
-      fontSize: "10px",
-      textAjustement: "center",
-      id: 1,
-    },
-    {
-      name: "react Context API",
-      image: "cara",
-      texColor: "green",
-      fontSize: "10px",
-      textAjustement: "center",
-      id: 1,
-    },
-  ];
-
   return (
     <>
       <LandingContainer>
@@ -44,7 +17,7 @@ function SurveyingLanding(props) {
           <SurveyingTitle
             title={props.titleProp || "What is the best way to manage the state in React"}
           ></SurveyingTitle>
-          <Options options={options}></Options>
+          <Options options={props.optionList}></Options>
         </SurveyContainer>
         <SurveyingFooter></SurveyingFooter>
       </LandingContainer>
@@ -56,6 +29,7 @@ function SurveyingLanding(props) {
 
 const mapStateToProps = (state) => ({
   titleProp: state.title,
+  optionList: state.options,
 });
 
 export default connect(mapStateToProps, null)(SurveyingLanding);
