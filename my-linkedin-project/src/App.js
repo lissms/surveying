@@ -1,33 +1,16 @@
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-
-import SurveyingLanding from "./surveging/SurveyingLanding";
-
-const initialState = {
-  title: "",
-};
-
-// Descripción de como se cambiara el estado global
-// configuración
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "CHANGE_TITLE":
-      return { ...state, title: action.payload };
-    default:
-      return state;
-  }
-};
-
-const reduxChromeExtensionSettings = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-
-const store = createStore(reducer, reduxChromeExtensionSettings);
+import React from "react";
+/* import { changeTitle } from "./actions/actions"; */
+//COMPONENTS
+import Landing from "./component/Landing/Landing.jsx";
+import Menu from "./component/menu/Menu";
+import Modal from "./component/modal/Modal";
 
 function App() {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <SurveyingLanding />
-      </Provider>
+    <div>
+      <Landing />
+      <Menu></Menu>
+      <Modal></Modal>
     </div>
   );
 }
