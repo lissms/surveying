@@ -6,7 +6,7 @@ function Title(props) {
   return (
     <div>
       <TitleStyled color="red" textAjustement="center" fontSize="12px">
-        aqui el titulo con props
+        {props.title}
       </TitleStyled>
     </div>
   );
