@@ -17,12 +17,15 @@ function Landing(props) {
         <img src={logo} alt="logo surveying" />
       </HeaderStyled>
       <SurveyCardStyled>
-        <Title title={props.title || "What is the best way to manage the state in React"}></Title>
+        <Title
+          fontSize={props.fontSize}
+          title={props.title || "What is the best way to manage the state in React ?"}
+        ></Title>
         <Options></Options>
       </SurveyCardStyled>
       <Footer />
     </LandingContainerStyled>
   );
 }
-const mapStateToProps = (state) => ({ title: state.title });
+const mapStateToProps = (state) => ({ title: state.title, fontSize: state.fontSize });
 export default connect(mapStateToProps, null)(Landing);

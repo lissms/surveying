@@ -22,6 +22,7 @@ function TextAdjustement(props) {
           display="flex"
           justify="center"
           alignItm="center"
+          cursor="pointer"
         >
           <img src={left} alt="left" />
         </Button>
