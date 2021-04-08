@@ -31,12 +31,16 @@ export const ModalWindowStyled = styled.div`
   align-items: center;
 `;
 export const ModalStyled = styled.div`
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100vh;
   background: rgba(49, 52, 104, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: ${(props) => (props.isOpen ? `translateX(150%)` : `translateX(0)`)};
+  transition: transform ease 0.5s;
 `;
 export const HexadesimalColorStyles = styled.div`
   display: flex;

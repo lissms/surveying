@@ -13,6 +13,7 @@ const initialState = {
   //________________________
   fontSize: "10px",
   textAjustement: "center",
+  isOpen: true,
 };
 
 // Descripción de como se cambiara el estado global
@@ -27,6 +28,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, fontSize: action.payload };
     case "CHANGE_TEXT_AJUSTEMENT":
       return { ...state, textAjustement: action.payload };
+    case "OPEN_COLOR_PALETTE":
+      return { ...state, isOpen: action.payload };
     default:
       return state;
   }

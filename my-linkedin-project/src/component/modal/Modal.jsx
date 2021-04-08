@@ -11,10 +11,14 @@ import {
   HexadesimalColorStyles,
   ColorTextStyles,
 } from "./Modal.Styled";
+//REDUX
+import { connect } from "react-redux";
+//actions
+import { openCloseColorPalette } from "../../actions/actions";
 
 function Modal(props) {
   return (
-    <ModalStyled>
+    <ModalStyled isOpen={props.isOpen}>
       <ModalWindowStyled>
         <OptionStyles>
           <TitleStyles> Change color</TitleStyles>
@@ -29,6 +33,7 @@ function Modal(props) {
             color="#FFFFFF"
             marginRg="10px"
             cursor="pointer"
+            onClick={() => props.openPalette(true)}
           >
             X
           </Button>
@@ -69,4 +74,12 @@ function Modal(props) {
   );
 }
 
-export default Modal;
+const mapStateToProps = (state) => ({
+  isOpen: state.isOpen,
+});
+
+const mapDispatchToProps = {
+  openPalette: openCloseColorPalette,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

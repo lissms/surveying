@@ -20,6 +20,7 @@ function Button(props) {
       marginTop={props.marginTop}
       onClick={props.onClick}
       value={props.value}
+      isOpen={props.isOpen}
     >
       {props.children}
     </BtnStyled>

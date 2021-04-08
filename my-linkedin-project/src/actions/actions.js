@@ -24,3 +24,9 @@ export const changeTextAjustement = (newTextAjustement) => {
     payload: newTextAjustement,
   };
 };
+export const openCloseColorPalette = (openPalette) => {
+  return {
+    type: "OPEN_COLOR_PALETTE",
+    payload: openPalette,
+  };
+};
