@@ -42,3 +42,9 @@ export const chageTextColor = (newTextColor) => {
     payload: newTextColor,
   };
 };
+export const chageBackgroundColor = (newBackground) => {
+  return {
+    type: "CHANGE_BACKGROUND_COLOR",
+    payload: newBackground,
+  };
+};

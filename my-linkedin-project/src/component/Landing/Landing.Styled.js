@@ -26,4 +26,5 @@ export const SurveyCardStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: ${(props) => `${props.background}`};
 `;

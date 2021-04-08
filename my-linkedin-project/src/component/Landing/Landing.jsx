@@ -16,7 +16,7 @@ function Landing(props) {
       <HeaderStyled>
         <img src={logo} alt="logo surveying" />
       </HeaderStyled>
-      <SurveyCardStyled>
+      <SurveyCardStyled background={props.background}>
         <Title
           textColor={props.textColor}
           fontSize={props.fontSize}
@@ -34,5 +34,6 @@ const mapStateToProps = (state) => ({
   fontSize: state.fontSize,
   textAjustement: state.textAjustement,
   textColor: state.textColor,
+  background: state.background,
 });
 export default connect(mapStateToProps, null)(Landing);

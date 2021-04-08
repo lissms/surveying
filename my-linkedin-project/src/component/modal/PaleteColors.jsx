@@ -8,7 +8,7 @@ import { PaleteStyles } from "./PaleteColors.Styled";
 //REDUX
 import { connect } from "react-redux";
 //actions
-import { chageTextColor } from "../../actions/actions";
+import { chageTextColor, chageBackgroundColor } from "../../actions/actions";
 
 function PaleteColors(props) {
   return (
@@ -21,6 +21,7 @@ function PaleteColors(props) {
             width="44px"
             cursor="pointer"
             onClick={() => props.changeColor(color.color)}
+            onClick={() => props.changeBackground(color.color)}
           ></Button>
         );
       })}
@@ -30,6 +31,7 @@ function PaleteColors(props) {
 
 const mapDispatchToProps = {
   changeColor: chageTextColor,
+  changeBackground: chageBackgroundColor,
 };
 
 export default connect(null, mapDispatchToProps)(PaleteColors);

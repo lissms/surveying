@@ -9,7 +9,7 @@ export const TitleStyled = styled.p`
   color: #313468;
 `;
 export const MenuContentStyled = styled.div`
-  background-color: red;
+  background-color: #eae4e4f7;
   padding: 5%;
   width: 68%;
   position: absolute;

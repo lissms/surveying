@@ -66,6 +66,7 @@ function Modal(props) {
           alignItm="center"
           borderRd="5px"
           marginTop="15px"
+          onClick={() => props.openPalette(true)}
         >
           ✓ Save
         </Button>

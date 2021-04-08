@@ -16,6 +16,7 @@ const initialState = {
   isOpenModal: true,
   isOpenMenu: true,
   textColor: "blue",
+  background: "#fff",
 };
 
 // Descripción de como se cambiara el estado global
@@ -36,6 +37,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, isOpenMenu: action.payload };
     case "CHANGE_TEXT_COLOR":
       return { ...state, textColor: action.payload };
+    case "CHANGE_BACKGROUND_COLOR":
+      return { ...state, background: action.payload };
     default:
       return state;
   }
