@@ -25,6 +25,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, option: action.payload };
     case "CHANGE_FONT_SIZE":
       return { ...state, fontSize: action.payload };
+    case "CHANGE_TEXT_AJUSTEMENT":
+      return { ...state, textAjustement: action.payload };
     default:
       return state;
   }

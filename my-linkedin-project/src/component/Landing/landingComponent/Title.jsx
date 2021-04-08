@@ -5,7 +5,7 @@ import { TitleStyled } from "./Title.Styled";
 function Title(props) {
   return (
     <div>
-      <TitleStyled color="red" textAjustement="center" fontSize={props.fontSize}>
+      <TitleStyled color="red" textAjustement={props.textAjustement} fontSize={props.fontSize}>
         {props.title}
       </TitleStyled>
     </div>

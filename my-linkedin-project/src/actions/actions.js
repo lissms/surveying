@@ -17,3 +17,10 @@ export const changeSizeAction = (newFontSize) => {
     payload: newFontSize,
   };
 };
+export const changeTextAjustement = (newTextAjustement) => {
+  console.log(`newTextAjustement`, newTextAjustement);
+  return {
+    type: "CHANGE_TEXT_AJUSTEMENT",
+    payload: newTextAjustement,
+  };
+};

@@ -18,6 +18,8 @@ function Button(props) {
       marginRg={props.marginRg}
       cursor={props.cursor}
       marginTop={props.marginTop}
+      onClick={props.onClick}
+      value={props.value}
     >
       {props.children}
     </BtnStyled>
