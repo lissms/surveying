@@ -18,6 +18,7 @@ function Landing(props) {
       </HeaderStyled>
       <SurveyCardStyled>
         <Title
+          textColor={props.textColor}
           fontSize={props.fontSize}
           textAjustement={props.textAjustement}
           title={props.title || "What is the best way to manage the state in React ?"}
@@ -32,5 +33,6 @@ const mapStateToProps = (state) => ({
   title: state.title,
   fontSize: state.fontSize,
   textAjustement: state.textAjustement,
+  textColor: state.textColor,
 });
 export default connect(mapStateToProps, null)(Landing);

@@ -75,7 +75,7 @@ function Modal(props) {
 }
 
 const mapStateToProps = (state) => ({
-  isOpen: state.isOpen,
+  isOpen: state.isOpenModal,
 });
 
 const mapDispatchToProps = {

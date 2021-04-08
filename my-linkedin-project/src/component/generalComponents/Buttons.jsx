@@ -4,6 +4,9 @@ import { BtnStyled } from "./Buttons.Styled";
 function Button(props) {
   return (
     <BtnStyled
+      position={props.position}
+      top={props.top}
+      right={props.right}
       background={props.background}
       backgroundImg={props.backgroundImg}
       border={props.border}

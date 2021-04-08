@@ -13,7 +13,9 @@ const initialState = {
   //________________________
   fontSize: "10px",
   textAjustement: "center",
-  isOpen: true,
+  isOpenModal: true,
+  isOpenMenu: true,
+  textColor: "blue",
 };
 
 // Descripción de como se cambiara el estado global
@@ -29,7 +31,11 @@ const reducer = (state = initialState, action) => {
     case "CHANGE_TEXT_AJUSTEMENT":
       return { ...state, textAjustement: action.payload };
     case "OPEN_COLOR_PALETTE":
-      return { ...state, isOpen: action.payload };
+      return { ...state, isOpenModal: action.payload };
+    case "OPEN_MENU":
+      return { ...state, isOpenMenu: action.payload };
+    case "CHANGE_TEXT_COLOR":
+      return { ...state, textColor: action.payload };
     default:
       return state;
   }

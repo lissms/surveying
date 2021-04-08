@@ -9,9 +9,13 @@ export const TitleStyled = styled.p`
   color: #313468;
 `;
 export const MenuContentStyled = styled.div`
-  height: 90vh;
-  background-color: #fff;
+  background-color: red;
   padding: 5%;
+  width: 68%;
+  position: absolute;
+  top: 75px;
+  transform: ${(props) => (props.isOpen ? `translateX(150%)` : `translateX(91px)`)};
+  transition: transform ease 0.5s;
 `;
 export const InputTextStyled = styled.input`
   width: 100%;
@@ -55,4 +59,9 @@ export const ContentStyleSelector = styled.div`
   align-items: center;
   padding-bottom: 17px;
   border-bottom: 1px solid #e4e4e4;
+`;
+export const Headermenu = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;

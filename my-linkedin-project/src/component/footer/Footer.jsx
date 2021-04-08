@@ -7,6 +7,10 @@ import download from "../../images/download-icon.png";
 import edit from "../../images/edit-icon.png";
 //STYLES
 import { TextButtonStyles, FooterStyled } from "./Footer.Styled.js";
+//REDUX
+import { connect } from "react-redux";
+//actions
+import { openCloseMenu } from "../../actions/actions";
 
 function Footer(props) {
   return (
@@ -36,6 +40,7 @@ function Footer(props) {
         <TextButtonStyles>Download</TextButtonStyles>
       </Button>
       <Button
+        isOpen={props.isOpen}
         background=" #313468"
         borderRd="2px"
         height="30px"
@@ -43,6 +48,8 @@ function Footer(props) {
         display="flex"
         justify="center"
         alignItm="center"
+        onClick={() => props.openMenu(false)}
+        /*  onClick={() => props.openMenu(() => (props.isOpen ? false : true))} */
       >
         <img src={edit} alt="edit" />
         <TextButtonStyles>Edit</TextButtonStyles>
@@ -50,5 +57,12 @@ function Footer(props) {
     </FooterStyled>
   );
 }
+const mapStateToProps = (state) => ({
+  isOpen: state.isOpen,
+});
 
-export default Footer;
+const mapDispatchToProps = {
+  openMenu: openCloseMenu,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);

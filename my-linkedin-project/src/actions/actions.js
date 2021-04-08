@@ -30,3 +30,15 @@ export const openCloseColorPalette = (openPalette) => {
     payload: openPalette,
   };
 };
+export const openCloseMenu = (openMenu) => {
+  return {
+    type: "OPEN_MENU",
+    payload: openMenu,
+  };
+};
+export const chageTextColor = (newTextColor) => {
+  return {
+    type: "CHANGE_TEXT_COLOR",
+    payload: newTextColor,
+  };
+};
