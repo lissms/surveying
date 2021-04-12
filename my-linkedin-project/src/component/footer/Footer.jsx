@@ -23,6 +23,7 @@ function Footer(props) {
         display="flex"
         justify="center"
         alignItm="center"
+        cursor="pointer"
       >
         <img src={share} alt="share" />
         <TextButtonStyles>Share</TextButtonStyles>
@@ -35,11 +36,13 @@ function Footer(props) {
         display="flex"
         justify="center"
         alignItm="center"
+        cursor="pointer"
       >
         <img src={download} alt="download" />
         <TextButtonStyles>Download</TextButtonStyles>
       </Button>
       <Button
+        cursor="pointer"
         isOpen={props.isOpen}
         background=" #313468"
         borderRd="2px"
@@ -49,7 +52,6 @@ function Footer(props) {
         justify="center"
         alignItm="center"
         onClick={() => props.openMenu(false)}
-        /*  onClick={() => props.openMenu(() => (props.isOpen ? false : true))} */
       >
         <img src={edit} alt="edit" />
         <TextButtonStyles>Edit</TextButtonStyles>

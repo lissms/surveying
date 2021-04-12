@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 //COMPONENT
 import Button from "../generalComponents/Buttons";
 import PalettteColors from "./PaleteColors";
@@ -14,10 +14,12 @@ import {
 //REDUX
 import { connect } from "react-redux";
 //actions
-import { openCloseColorPalette } from "../../actions/actions";
+import { openCloseTextColorModal, openCloseBackgroundColorModal } from "../../actions/actions";
 
 function Modal(props) {
-  return (
+  const [color, setColor] = useState("");
+
+  return !props.isOpen ? (
     <ModalStyled isOpen={props.isOpen}>
       <ModalWindowStyled>
         <OptionStyles>
@@ -33,12 +35,14 @@ function Modal(props) {
             color="#FFFFFF"
             marginRg="10px"
             cursor="pointer"
-            onClick={() => props.openPalette(true)}
+            onClick={() => {
+              props.onCloseModal(true);
+            }}
           >
             X
           </Button>
         </OptionStyles>
-        <PalettteColors></PalettteColors>
+        <PalettteColors onSelectColor={(color) => setColor(color)} />
         <HexadesimalColorStyles>
           <ColorTextStyles>Color (soom)</ColorTextStyles>
           <Button
@@ -66,21 +70,18 @@ function Modal(props) {
           alignItm="center"
           borderRd="5px"
           marginTop="15px"
-          onClick={() => props.openPalette(true)}
+          onClick={() => {
+            props.onCloseModal(true);
+            props.onSave(color);
+
+            /* props.onSaveBackground(color); */
+          }}
         >
           ✓ Save
         </Button>
       </ModalWindowStyled>
     </ModalStyled>
-  );
+  ) : null;
 }
 
-const mapStateToProps = (state) => ({
-  isOpen: state.isOpenModal,
-});
-
-const mapDispatchToProps = {
-  openPalette: openCloseColorPalette,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default Modal;

@@ -8,7 +8,7 @@ function Button(props) {
       top={props.top}
       right={props.right}
       background={props.background}
-      backgroundImg={props.backgroundImg}
+      /*   backgroundImg={props.backgroundImg} */
       border={props.border}
       borderRd={props.borderRd}
       height={props.height}

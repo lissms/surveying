@@ -1,12 +1,13 @@
 import React from "react";
 import Button from "../generalComponents/Buttons";
+import Modal from "../modal/Modal";
 import { InputRadio, ColorImageSelector, Color, Image } from "./backgroundSelector.styled";
 //IMAGES
 import paletteColor from "../../images/palette-colors.png";
 //REDUX
 import { connect } from "react-redux";
 //actions
-import { openCloseColorPalette } from "../../actions/actions";
+import { openCloseBackgroundColorModal, chageBackgroundColor } from "../../actions/actions";
 
 function BackgroundSections(props) {
   return (
@@ -19,10 +20,15 @@ function BackgroundSections(props) {
           width="44px"
           borderRd="4px"
           border="1px solid #313468"
-          backgroundImg={paletteColor}
-          onClick={() => props.openPalette(false)}
+          background={props.background || paletteColor}
+          onClick={() => props.openBackgroundPalette(false)}
         ></Button>
       </Color>
+      <Modal
+        isOpen={props.isOpen}
+        onSave={(color) => props.changeBackground(color)}
+        onCloseModal={props.openBackgroundPalette}
+      />
       <Image>
         <InputRadio type="radio" name="background" id="background" value="mediodia" disabled="disabled"></InputRadio>
         <label>Image (soon)</label>
@@ -33,11 +39,13 @@ function BackgroundSections(props) {
 }
 
 const mapStateToProps = (state) => ({
-  isOpen: state.isOpen,
+  isOpen: state.isOpenBackgroundModal,
+  background: state.background,
 });
 
 const mapDispatchToProps = {
-  openPalette: openCloseColorPalette,
+  openBackgroundPalette: openCloseBackgroundColorModal,
+  changeBackground: chageBackgroundColor,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BackgroundSections);

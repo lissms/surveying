@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const BtnStyled = styled.div`
-  background: ${(props) => `${props.background}`};
-  background-image: ${(props) => `url(${props.backgroundImg})`};
+  background: ${(props) => `${props.background.includes("#") ? props.background : `url(${props.background})`}`};
+  /*  background: ${(props) => `${props.background}`};
+  background-image: ${(props) => `url(${props.backgroundImg})`}; */
   border: ${(props) => `${props.border}`};
   width: ${(props) => `${props.width}`};
   height: ${(props) => `${props.height}`};

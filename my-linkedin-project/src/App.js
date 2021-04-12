@@ -3,7 +3,6 @@ import React from "react";
 //COMPONENTS
 import Landing from "./component/Landing/Landing.jsx";
 import Menu from "./component/menu/Menu";
-import Modal from "./component/modal/Modal";
 
 //REDUX
 import { createStore } from "redux";
@@ -22,7 +21,6 @@ function App() {
       <Provider store={store}>
         <Landing />
         <Menu></Menu>
-        <Modal></Modal>
       </Provider>
     </div>
   );

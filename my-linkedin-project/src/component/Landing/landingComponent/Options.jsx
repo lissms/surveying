@@ -1,16 +1,24 @@
 import React from "react";
-// IMAGES
-import heart from "../../../images/linkedin-reacciones-1.png";
+
 //STYLES
 import { TextOptionStyles, OptionStyles } from "./Options.Styled";
 
-function Options(props) {
-  return (
-    <OptionStyles>
-      <img src={heart} alt="heart" />
-      <TextOptionStyles>react</TextOptionStyles>
-    </OptionStyles>
-  );
-}
+//REDUX
+import { connect } from "react-redux";
 
-export default Options;
+//UTILITIES
+import getImageByName from "../../../utilities/getImageByName";
+
+function Options(props) {
+  return props.options.map((option, index) => (
+    <OptionStyles>
+      <img src={getImageByName(option.image)} alt="heart" />
+      <TextOptionStyles>{option.text}</TextOptionStyles>
+    </OptionStyles>
+  ));
+}
+const mapStateToProps = (state) => ({
+  options: state.options,
+});
+
+export default connect(mapStateToProps, null)(Options);

@@ -24,9 +24,15 @@ export const changeTextAjustement = (newTextAjustement) => {
     payload: newTextAjustement,
   };
 };
-export const openCloseColorPalette = (openPalette) => {
+export const openCloseTextColorModal = (openPalette) => {
   return {
-    type: "OPEN_COLOR_PALETTE",
+    type: "OPEN_COLOR_MODAL",
+    payload: openPalette,
+  };
+};
+export const openCloseBackgroundColorModal = (openPalette) => {
+  return {
+    type: "OPEN_BACKGROUND_MODAL",
     payload: openPalette,
   };
 };
@@ -48,3 +54,8 @@ export const chageBackgroundColor = (newBackground) => {
     payload: newBackground,
   };
 };
+
+export const toggleOpenOptionPanel = (optionId) => ({
+  type: "TOGGLE_OPEN_OPTION_PANEL",
+  payload: optionId,
+});

@@ -9,13 +9,18 @@ export const TitleStyled = styled.p`
   color: #313468;
 `;
 export const MenuContentStyled = styled.div`
-  background-color: #eae4e4f7;
-  padding: 5%;
-  width: 68%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   position: absolute;
   top: 75px;
-  transform: ${(props) => (props.isOpen ? `translateX(150%)` : `translateX(91px)`)};
+  transform: ${(props) => (props.isOpen ? `translateX(150%)` : `translateX(0)`)};
   transition: transform ease 0.5s;
+
+  & .menu {
+    background-color: #eae4e4f7;
+    padding: 16px;
+  }
 `;
 export const InputTextStyled = styled.input`
   width: 100%;
@@ -60,8 +65,13 @@ export const ContentStyleSelector = styled.div`
   padding-bottom: 17px;
   border-bottom: 1px solid #e4e4e4;
 `;
-export const Headermenu = styled.div`
+export const HeaderMenuStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+export const CloseMenuStyled = styled.div`
+  background-color: #ff000000;
+  width: 108px;
+  height: 90vh;
 `;

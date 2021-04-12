@@ -13,15 +13,15 @@ import { chageTextColor, chageBackgroundColor } from "../../actions/actions";
 function PaleteColors(props) {
   return (
     <PaleteStyles>
-      {colors.map((color) => {
+      {colors.map((color, i) => {
         return (
           <Button
+            key={i}
             background={color.color}
             height="24px"
             width="44px"
             cursor="pointer"
-            onClick={() => props.changeColor(color.color)}
-            onClick={() => props.changeBackground(color.color)}
+            onClick={() => props.onSelectColor(color.color)}
           ></Button>
         );
       })}
@@ -29,9 +29,4 @@ function PaleteColors(props) {
   );
 }
 
-const mapDispatchToProps = {
-  changeColor: chageTextColor,
-  changeBackground: chageBackgroundColor,
-};
-
-export default connect(null, mapDispatchToProps)(PaleteColors);
+export default PaleteColors;

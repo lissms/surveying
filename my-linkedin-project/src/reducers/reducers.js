@@ -1,22 +1,33 @@
 const initialState = {
   title: "",
+  fontSize: "10px",
+  textAjustement: "center",
+  isOpenTextModal: true,
+  isOpenBackgroundModal: true,
+  isOpenMenu: true,
+  textColor: "",
+  background: "",
+  //________________________
   options: [
     {
-      name: "redux",
-      image: "mano",
+      id: 1,
+      text: "redux",
+      image: "heart",
       texColor: "red",
       fontSize: "10px",
       textAjustement: "center",
-      id: 1,
+      isOpen: true,
+    },
+    {
+      id: 2,
+      text: "el TIIIIIIIIIIIIIIIIGREEE!",
+      image: "hand",
+      texColor: "red",
+      fontSize: "10px",
+      textAjustement: "center",
+      isOpen: true,
     },
   ],
-  //________________________
-  fontSize: "10px",
-  textAjustement: "center",
-  isOpenModal: true,
-  isOpenMenu: true,
-  textColor: "blue",
-  background: "#fff",
 };
 
 // Descripción de como se cambiara el estado global
@@ -31,14 +42,31 @@ const reducer = (state = initialState, action) => {
       return { ...state, fontSize: action.payload };
     case "CHANGE_TEXT_AJUSTEMENT":
       return { ...state, textAjustement: action.payload };
-    case "OPEN_COLOR_PALETTE":
-      return { ...state, isOpenModal: action.payload };
+    case "OPEN_COLOR_MODAL":
+      return { ...state, isOpenTextModal: action.payload };
+    case "OPEN_BACKGROUND_MODAL":
+      return { ...state, isOpenBackgroundModal: action.payload };
     case "OPEN_MENU":
       return { ...state, isOpenMenu: action.payload };
     case "CHANGE_TEXT_COLOR":
       return { ...state, textColor: action.payload };
     case "CHANGE_BACKGROUND_COLOR":
       return { ...state, background: action.payload };
+    //_______________________
+    case "TOGGLE_OPEN_OPTION_PANEL":
+      return {
+        ...state,
+        options: state.options.map((option) => {
+          if (option.id === action.payload) {
+            return {
+              ...option,
+              isOpen: !option.isOpen,
+            };
+          } else {
+            return option;
+          }
+        }),
+      };
     default:
       return state;
   }
