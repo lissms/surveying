@@ -75,3 +75,14 @@ export const CloseMenuStyled = styled.div`
   width: 108px;
   height: 90vh;
 `;
+export const TextButtonStyles = styled.div`
+  color: #fff;
+  font-size: 20px;
+`;
+export const HeaderObtionsStyles = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 255px;
+  margin: 0;
+`;

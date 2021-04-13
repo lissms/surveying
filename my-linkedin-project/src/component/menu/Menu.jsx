@@ -4,10 +4,18 @@ import React from "react";
 import StyleSelector from "./StyleSelector";
 import BackgroundSections from "./BackgroundSections";
 import OptionsSections from "./OptionsSections";
-/* import Button from "../generalComponents/Buttons"; */
+import Button from "../generalComponents/Buttons";
 
 //STYLES
-import { TitleStyled, MenuContentStyled, InputTextStyled, HeaderMenuStyled, CloseMenuStyled } from "./menu.styled";
+import {
+  TitleStyled,
+  MenuContentStyled,
+  InputTextStyled,
+  HeaderMenuStyled,
+  CloseMenuStyled,
+  TextButtonStyles,
+  HeaderObtionsStyles,
+} from "./menu.styled";
 
 //REDUX
 import { connect } from "react-redux";
@@ -39,7 +47,23 @@ function Menu(props) {
 
           <TitleStyled>Background</TitleStyled>
           <BackgroundSections></BackgroundSections>
-          <TitleStyled>Options</TitleStyled>
+          <HeaderObtionsStyles>
+            <TitleStyled>Options</TitleStyled>
+
+            <Button
+              background=" #313468"
+              borderRd="2px"
+              height="26px"
+              width="26px"
+              display="flex"
+              justify="center"
+              alignItm="center"
+              cursor="pointer"
+            >
+              <TextButtonStyles>+</TextButtonStyles>
+            </Button>
+          </HeaderObtionsStyles>
+
           <OptionsSections></OptionsSections>
         </div>
       </MenuContentStyled>
