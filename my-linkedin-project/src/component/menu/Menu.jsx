@@ -23,7 +23,7 @@ import { connect } from "react-redux";
 //actions
 
 import { changeTitle } from "../../actions/actions";
-import { openCloseMenu } from "../../actions/actions";
+import { openCloseMenu, addNewOption, removeOption } from "../../actions/actions";
 
 function Menu(props) {
   return (
@@ -59,12 +59,13 @@ function Menu(props) {
               justify="center"
               alignItm="center"
               cursor="pointer"
+              onClick={props.addOption}
             >
               <TextButtonStyles>+</TextButtonStyles>
             </Button>
           </HeaderObtionsStyles>
 
-          <OptionsSections></OptionsSections>
+          <OptionsSections />
         </div>
       </MenuContentStyled>
     </>
@@ -73,11 +74,13 @@ function Menu(props) {
 const mapStateToProps = (state) => ({
   title: state.title,
   isOpen: state.isOpenMenu,
+  options: state.options,
 });
 
 const mapDispatchToProps = {
   changeTitleProp: changeTitle,
   closeMenu: openCloseMenu,
+  addOption: addNewOption,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

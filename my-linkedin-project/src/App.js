@@ -13,7 +13,9 @@ import { Provider } from "react-redux";
 import reducer from "./reducers/reducers";
 
 //creating my store
-const store = createStore(reducer);
+const reduxChromeExtensionSettings = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+const store = createStore(reducer, reduxChromeExtensionSettings);
 
 function App() {
   return (

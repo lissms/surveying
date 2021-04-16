@@ -59,3 +59,10 @@ export const toggleOpenOptionPanel = (optionId) => ({
   type: "TOGGLE_OPEN_OPTION_PANEL",
   payload: optionId,
 });
+export const addNewOption = () => ({
+  type: "ADD_NEW_OPTION",
+});
+export const removeOption = (removeOption) => ({
+  type: "REMOVE_OPTION",
+  payload: removeOption,
+});

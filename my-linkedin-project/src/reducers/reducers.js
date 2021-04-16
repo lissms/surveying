@@ -10,18 +10,9 @@ const initialState = {
   //________________________
   options: [
     {
-      id: 1,
+      id: Math.random(),
       text: "redux",
       image: "heart",
-      texColor: "red",
-      fontSize: "10px",
-      textAjustement: "center",
-      isOpen: true,
-    },
-    {
-      id: 2,
-      text: "el TIIIIIIIIIIIIIIIIGREEE!",
-      image: "hand",
       texColor: "red",
       fontSize: "10px",
       textAjustement: "center",
@@ -52,6 +43,28 @@ const reducer = (state = initialState, action) => {
       return { ...state, textColor: action.payload };
     case "CHANGE_BACKGROUND_COLOR":
       return { ...state, background: action.payload };
+    case "ADD_NEW_OPTION":
+      return {
+        ...state,
+        options: [
+          ...state.options,
+          {
+            id: Math.random(),
+            text: "",
+            image: "",
+            texColor: "",
+            fontSize: "",
+            textAjustement: "",
+            isOpen: false,
+          },
+        ],
+      };
+    case "REMOVE_OPTION":
+      return {
+        ...state,
+        options: state.options.filter((option) => option.id !== action.payload),
+      };
+
     //_______________________
     case "TOGGLE_OPEN_OPTION_PANEL":
       return {
