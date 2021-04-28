@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 //STYLES
 import { ListStyles } from "./ChooseEmoticon.styled";
 //IMAGES
@@ -9,7 +9,35 @@ import light from "../../images/ligth.png";
 import face from "../../images/face.png";
 
 function ChooseEmoticon(props) {
-  // esto debería ser un array
+  const emoticonList = [
+    {
+      id: Math.random(),
+      name: "heart",
+      img: heart,
+    },
+    {
+      id: Math.random(),
+      name: "applause",
+      img: applause,
+    },
+    {
+      id: Math.random(),
+      name: "okHand",
+      img: okHand,
+    },
+    {
+      id: Math.random(),
+      name: "light",
+      img: light,
+    },
+    {
+      id: Math.random(),
+      name: "face",
+      img: face,
+    },
+  ];
+
+  const [isEmoticonSelected, setIsEmoticonSelected] = useState(false);
 
   // debería recibir una props "selectedEmoticon" con uno de los tipo de emoticon,
   // par que aparezca seleccionado
@@ -18,21 +46,21 @@ function ChooseEmoticon(props) {
   return (
     <div>
       <ListStyles>
-        <li>
-          <img src={heart} alt="heart" />
-        </li>
-        <li>
-          <img src={applause} alt="applause" />
-        </li>
-        <li>
-          <img src={okHand} alt="okHand" />
-        </li>
-        <li>
-          <img src={light} alt="healightrt" />
-        </li>
-        <li>
-          <img src={face} alt="curiosity" />
-        </li>
+        {emoticonList.map((emoticon) => {
+          return (
+            <li
+              className="emoticon"
+              isEmoticonSelected={isEmoticonSelected}
+              id={emoticon.id}
+              key={emoticon.id}
+              onClick={() => {
+                setIsEmoticonSelected(true);
+              }}
+            >
+              <img src={emoticon.img} alt={emoticon.name} />
+            </li>
+          );
+        })}
       </ListStyles>
     </div>
   );

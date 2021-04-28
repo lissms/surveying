@@ -1,6 +1,6 @@
 import React from "react";
 import StyleSelector from "./StyleSelector";
-import { TitleStyled, MenuContentStyled, InputTextStyled } from "./menu.styled";
+import { TitleStyled, InputTextStyled } from "./menu.styled";
 import { OptionChoose } from "./OptionChooseStyles.styled";
 import ChooseEmoticon from "./ChooseEmoticon";
 
