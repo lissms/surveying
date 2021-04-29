@@ -38,7 +38,7 @@ function OptionsSections(props) {
                 <TextButtonStyles>-</TextButtonStyles>
               </Button>
             </Option>
-            <OptionChooseStyles hasFlag={option.isOpen}></OptionChooseStyles>
+            <OptionChooseStyles hasFlag={option.isOpen} optionsId={option.id}></OptionChooseStyles>
           </div>
         );
       })}

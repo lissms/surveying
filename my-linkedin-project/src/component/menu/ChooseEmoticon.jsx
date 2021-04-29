@@ -8,6 +8,10 @@ import okHand from "../../images/ok-hand.png";
 import light from "../../images/ligth.png";
 import face from "../../images/face.png";
 
+//REDUX
+import { connect } from "react-redux";
+import { selectedEmoticon } from "../../actions/actions";
+
 function ChooseEmoticon(props) {
   const emoticonList = [
     {
@@ -37,8 +41,6 @@ function ChooseEmoticon(props) {
     },
   ];
 
-  const [isEmoticonSelected, setIsEmoticonSelected] = useState(false);
-
   // debería recibir una props "selectedEmoticon" con uno de los tipo de emoticon,
   // par que aparezca seleccionado
 
@@ -50,12 +52,9 @@ function ChooseEmoticon(props) {
           return (
             <li
               className="emoticon"
-              isEmoticonSelected={isEmoticonSelected}
               id={emoticon.id}
               key={emoticon.id}
-              onClick={() => {
-                setIsEmoticonSelected(true);
-              }}
+              onClick={() => props.selectedEmoticon(props.optionsId, emoticon.name)}
             >
               <img src={emoticon.img} alt={emoticon.name} />
             </li>
@@ -66,4 +65,8 @@ function ChooseEmoticon(props) {
   );
 }
 
-export default ChooseEmoticon;
+const mapDispatchToProps = {
+  selectedEmoticon,
+};
+
+export default connect(null, mapDispatchToProps)(ChooseEmoticon);

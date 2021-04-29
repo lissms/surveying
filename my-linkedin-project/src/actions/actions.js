@@ -5,12 +5,12 @@ export const changeTitle = (newTitle) => {
     payload: newTitle,
   };
 };
-export const changeOptionText = (newOptions) => {
+/* export const changeOptionText = (newOptions) => {
   return {
     type: "CHANGE_OPTION_TEXT",
     payload: newOptions,
   };
-};
+}; */
 export const changeSizeAction = (newFontSize) => {
   return {
     type: "CHANGE_FONT_SIZE",
@@ -65,4 +65,18 @@ export const addNewOption = () => ({
 export const removeOption = (removeOption) => ({
   type: "REMOVE_OPTION",
   payload: removeOption,
+});
+export const selectedEmoticon = (optionId, selectedEmoticon) => ({
+  type: "SELECTED_EMOTICON",
+  payload: {
+    optionId,
+    selectedEmoticon,
+  },
+});
+export const changeOptionText = (optionId, optionText) => ({
+  type: "CHANGE_OPTION_TEXT",
+  payload: {
+    optionId,
+    optionText,
+  },
 });

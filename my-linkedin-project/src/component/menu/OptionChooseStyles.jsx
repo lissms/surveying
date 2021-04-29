@@ -4,16 +4,32 @@ import { TitleStyled, InputTextStyled } from "./menu.styled";
 import { OptionChoose } from "./OptionChooseStyles.styled";
 import ChooseEmoticon from "./ChooseEmoticon";
 
+//REDUX
+import { connect } from "react-redux";
+import { changeOptionText } from "../../actions/actions";
+
 function OptionChooseStyles(props) {
   return (
     <OptionChoose hasFlag={props.hasFlag}>
       <TitleStyled>Choose Emoticon</TitleStyled>
-      <ChooseEmoticon></ChooseEmoticon>
+      <ChooseEmoticon optionsId={props.optionsId}></ChooseEmoticon>
       <TitleStyled>Text</TitleStyled>
-      <InputTextStyled type="text" name="Title" id="title" placeholder="Write options text" />
-      <StyleSelector></StyleSelector>
+      <InputTextStyled
+        type="text"
+        name="Title"
+        id="title"
+        placeholder="Write options text"
+        onChange={(ev) => {
+          props.changeOptionText(props.optionsId, ev.target.value);
+        }}
+      />
+      <StyleSelector optionsId={props.optionsId}></StyleSelector>
     </OptionChoose>
   );
 }
 
-export default OptionChooseStyles;
+const mapDispatchToProps = {
+  changeOptionText,
+};
+
+export default connect(null, mapDispatchToProps)(OptionChooseStyles);

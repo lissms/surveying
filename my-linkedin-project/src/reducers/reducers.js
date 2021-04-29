@@ -27,8 +27,8 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "CHANGE_TITLE":
       return { ...state, title: action.payload };
-    case "CHANGE_OPTION_TEXT":
-      return { ...state, option: action.payload };
+    /*  case "CHANGE_OPTION_TEXT":
+      return { ...state, option: action.payload }; */
     case "CHANGE_FONT_SIZE":
       return { ...state, fontSize: action.payload };
     case "CHANGE_TEXT_AJUSTEMENT":
@@ -63,6 +63,35 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         options: state.options.filter((option) => option.id !== action.payload),
+      };
+    //___________________-
+    case "SELECTED_EMOTICON":
+      return {
+        ...state,
+        options: state.options.map((option) => {
+          if (option.id === action.payload.optionId) {
+            return {
+              ...option,
+              image: action.payload.selectedEmoticon,
+            };
+          } else {
+            return option;
+          }
+        }),
+      };
+    case "CHANGE_OPTION_TEXT":
+      return {
+        ...state,
+        options: state.options.map((option) => {
+          if (option.id === action.payload.optionId) {
+            return {
+              ...option,
+              text: action.payload.optionText,
+            };
+          } else {
+            return option;
+          }
+        }),
       };
 
     //_______________________
