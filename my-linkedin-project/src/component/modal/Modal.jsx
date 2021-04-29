@@ -73,8 +73,6 @@ function Modal(props) {
           onClick={() => {
             props.onCloseModal(true);
             props.onSave(color);
-
-            /* props.onSaveBackground(color); */
           }}
         >
           ✓ Save

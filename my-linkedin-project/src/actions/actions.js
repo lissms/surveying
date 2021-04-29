@@ -80,3 +80,10 @@ export const changeOptionText = (optionId, optionText) => ({
     optionText,
   },
 });
+export const changeOptionColor = (optionColor, optionId) => ({
+  type: "CHANGE_OPTION_COLOR",
+  payload: {
+    optionId,
+    optionColor,
+  },
+});

@@ -6,7 +6,7 @@ import ChooseEmoticon from "./ChooseEmoticon";
 
 //REDUX
 import { connect } from "react-redux";
-import { changeOptionText } from "../../actions/actions";
+import { changeOptionText, chageTextColor } from "../../actions/actions";
 
 function OptionChooseStyles(props) {
   return (
@@ -23,13 +23,19 @@ function OptionChooseStyles(props) {
           props.changeOptionText(props.optionsId, ev.target.value);
         }}
       />
-      <StyleSelector optionsId={props.optionsId}></StyleSelector>
+      <StyleSelector
+        optionsId={props.optionsId}
+        onSave={(color) => {
+          props.changeColorTitle(color);
+        }}
+      ></StyleSelector>
     </OptionChoose>
   );
 }
 
 const mapDispatchToProps = {
   changeOptionText,
+  changeColorTitle: chageTextColor,
 };
 
 export default connect(null, mapDispatchToProps)(OptionChooseStyles);

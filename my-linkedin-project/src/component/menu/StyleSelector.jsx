@@ -8,17 +8,18 @@ import { ContentStyleSelector } from "./menu.styled";
 //REDUX
 import { connect } from "react-redux";
 //actions
-import { chageTextColor, openCloseTextColorModal } from "../../actions/actions";
+import { openCloseTextColorModal } from "../../actions/actions";
 
 function StyleSelector(props) {
   return (
     <ContentStyleSelector>
-      <TextColor></TextColor>
-      <FontSize></FontSize>
-      <TextAdjustement></TextAdjustement>
+      <TextColor optionsId={props.optionsId}></TextColor>
+      <FontSize optionsId={props.optionsId}></FontSize>
+      <TextAdjustement optionsId={props.optionsId}></TextAdjustement>
       <Modal
+        optionsId={props.optionsId}
         isOpen={props.isOpen}
-        onSave={(color) => props.changeColorTitle(color)}
+        onSave={props.onSave}
         onCloseModal={props.CloseTextColorModal}
       />
     </ContentStyleSelector>
@@ -30,7 +31,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  changeColorTitle: chageTextColor,
   CloseTextColorModal: openCloseTextColorModal,
 };
 

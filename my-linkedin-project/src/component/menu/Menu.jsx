@@ -23,7 +23,7 @@ import { connect } from "react-redux";
 //actions
 
 import { changeTitle } from "../../actions/actions";
-import { openCloseMenu, addNewOption, removeOption } from "../../actions/actions";
+import { openCloseMenu, addNewOption, chageTextColor, openCloseTextColorModal } from "../../actions/actions";
 
 function Menu(props) {
   return (
@@ -43,7 +43,11 @@ function Menu(props) {
             value={props.title}
             onChange={(event) => props.changeTitleProp(event.target.value)}
           />
-          <StyleSelector></StyleSelector>
+          <StyleSelector
+            onSave={(color) => {
+              props.changeColorTitle(color);
+            }}
+          ></StyleSelector>
 
           <TitleStyled>Background</TitleStyled>
           <BackgroundSections></BackgroundSections>
@@ -81,6 +85,8 @@ const mapDispatchToProps = {
   changeTitleProp: changeTitle,
   closeMenu: openCloseMenu,
   addOption: addNewOption,
+  changeColorTitle: chageTextColor,
+  CloseTextColorModal: openCloseTextColorModal,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

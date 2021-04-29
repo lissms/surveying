@@ -93,6 +93,20 @@ const reducer = (state = initialState, action) => {
           }
         }),
       };
+    case "CHANGE_OPTION_COLOR":
+      return {
+        ...state,
+        options: state.options.map((option) => {
+          if (option.id === action.payload.optionId) {
+            return {
+              ...option,
+              texColor: action.payload.optionColor,
+            };
+          } else {
+            return option;
+          }
+        }),
+      };
 
     //_______________________
     case "TOGGLE_OPEN_OPTION_PANEL":
