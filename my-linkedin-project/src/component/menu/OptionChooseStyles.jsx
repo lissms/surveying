@@ -3,10 +3,13 @@ import StyleSelector from "./StyleSelector";
 import { TitleStyled, InputTextStyled } from "./menu.styled";
 import { OptionChoose } from "./OptionChooseStyles.styled";
 import ChooseEmoticon from "./ChooseEmoticon";
+import Modal from "../modal/Modal";
 
 //REDUX
 import { connect } from "react-redux";
-import { changeOptionText, chageTextColor } from "../../actions/actions";
+import { changeOptionText, chageTextColor, changeOptionColor } from "../../actions/actions";
+//actions
+import { openCloseTextColorModal } from "../../actions/actions";
 
 function OptionChooseStyles(props) {
   return (
@@ -26,16 +29,30 @@ function OptionChooseStyles(props) {
       <StyleSelector
         optionsId={props.optionsId}
         onSave={(color) => {
-          props.changeColorTitle(color);
+          debugger;
+          props.changeOptionColor(color, props.optionsId);
         }}
-      ></StyleSelector>
+      >
+        <Modal
+          optionsId={props.optionsId}
+          isOpen={props.isOpen}
+          onSave={props.onSave}
+          onCloseModal={props.CloseTextColorModal}
+        />
+      </StyleSelector>
     </OptionChoose>
   );
 }
 
+const mapStateToProps = (state) => ({
+  isOpen: state.isOpenTextModal,
+});
+
 const mapDispatchToProps = {
   changeOptionText,
   changeColorTitle: chageTextColor,
+  changeOptionColor,
+  CloseTextColorModal: openCloseTextColorModal,
 };
 
-export default connect(null, mapDispatchToProps)(OptionChooseStyles);
+export default connect(mapStateToProps, mapDispatchToProps)(OptionChooseStyles);

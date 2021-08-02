@@ -45,6 +45,7 @@ function Menu(props) {
           />
           <StyleSelector
             onSave={(color) => {
+              debugger;
               props.changeColorTitle(color);
             }}
           ></StyleSelector>
